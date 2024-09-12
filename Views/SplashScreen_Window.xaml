@@ -1,0 +1,104 @@
+﻿<Window
+    x:Class="SplashScreen.Views.SplashScreen_Window"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:local="clr-namespace:SplashScreen.Views"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    Title="SplashScreen_Window"
+    Width="500"
+    Height="300"
+    AllowsTransparency="True"
+    Background="Transparent"
+    WindowStartupLocation="CenterScreen"
+    WindowStyle="None"
+    mc:Ignorable="d">
+    <Window.Resources>
+        <DropShadowEffect
+            x:Key="2DDropShadow"
+            BlurRadius="0"
+            Direction="270"
+            Opacity="0.17"
+            ShadowDepth="5" />
+    </Window.Resources>
+
+    <Border
+        CornerRadius="18"
+        Margin="10"
+        Background="#3E176D"
+        BorderBrush="#FEDC6B"
+        BorderThickness="6,0,6,0"
+        Effect="{StaticResource 2DDropShadow}">
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="0.65*" />
+                <RowDefinition Height="3*" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="1.3*" />
+            </Grid.RowDefinitions>
+
+            <Image
+                Margin="0 5 10 0"
+                Grid.Row="0"
+                Width="30"
+                Height="30"
+                HorizontalAlignment="Right"
+                VerticalAlignment="Top"
+                Cursor="Hand"
+                Effect="{StaticResource 2DDropShadow}"
+                MouseDown="Image_MouseDown"
+                Source="/Resources/Icon_Close_light.png" />
+
+            <Image
+                Grid.Row="1"
+                Height="150"
+                HorizontalAlignment="Center"
+                VerticalAlignment="Center"
+                Source="/Resources/Logo.png" />
+
+            <TextBlock
+                Grid.Row="2"
+                Margin="0,0,0,10"
+                HorizontalAlignment="Center"
+                Effect="{StaticResource 2DDropShadow}"
+                FontFamily="/Resources/#CocogooseProTrial Bold"
+                FontSize="30"
+                Foreground="#EADAFF"
+                Text="FLAMING ENTERPRISES" />
+            
+            <TextBlock
+                Grid.Row="2"
+                HorizontalAlignment="Center"
+                VerticalAlignment="Bottom"
+                Effect="{StaticResource 2DDropShadow}"
+                FontFamily="/Resources/#CocogooseProTrial DarkMode"
+                FontSize="12"
+                Foreground="#EADAFF"
+                Text="Grow your Business" />
+
+
+
+            <Border
+                Grid.Row="3"
+                Width="250"
+                Height="10"
+                Margin="0 20 0 0"
+                VerticalAlignment="Top"
+                Background="#EADAFF"
+                CornerRadius="3"
+                Effect="{StaticResource 2DDropShadow}"
+                >
+                <ProgressBar
+                    Margin="3 0 3 0"
+                    Background="Transparent"
+                    BorderBrush="Transparent"
+                    Foreground="#FEDC6B"
+                    IsIndeterminate="True"
+                    />
+            </Border>
+            
+            
+            
+        </Grid>
+    </Border>
+</Window>
